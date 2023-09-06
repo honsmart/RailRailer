@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import { useHistory } from "react-router-dom";
 import PayButton
   from "views/admin/PayButton";
 // Define an array of popular states in Nigeria
@@ -17,28 +16,8 @@ export default function CardSettings() {
   const [to, setTo] = useState("");
   const [date, setDate] = useState("");
   const [passengers, setPassengers] = useState("");
-  const [totalAmount, setTotalAmount] = useState(0); // State to store the total amount
-  const history = useHistory();
 
-  // Function to calculate the total amount
-  const calculateTotalAmount = () => {
-    // Define a fixed ticket price (adjust this according to your business logic)
-    const ticketPrice = 100; // Replace with your actual ticket price
 
-    // Parse the number of passengers to ensure it's a valid number
-    const numPassengers = parseInt(passengers);
-
-    // Check if the number of passengers is a valid number
-    if (!isNaN(numPassengers) && numPassengers > 0) {
-      // Calculate the total amount based on the ticket price and number of passengers
-      const total = ticketPrice * numPassengers;
-      setTotalAmount(total); // Update the state with the total amount
-    } else {
-      // Handle invalid input (e.g., show an error message)
-      // You can add your error handling logic here
-      setTotalAmount(0); // Reset the total amount to zero
-    }
-  };
 
   const handleBooking = () => {
     const booking = {
