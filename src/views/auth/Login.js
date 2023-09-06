@@ -1,7 +1,42 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React, { useState } from "react";
+import { Link, useHistory } from "react-router-dom";
 
 export default function Login() {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const history = useHistory();
+
+  // Define a default user
+  const defaultUser = {
+    email: "hikmah@gmail.com",
+    password: "hikmah",
+  };
+
+  const handleLogin = () => {
+    // Retrieve user data from localStorage
+    const storedUser = JSON.parse(localStorage.getItem("user"));
+
+    if (!storedUser) {
+      // If no user data is stored, create a new user
+      const newUser = {
+        email,
+        password,
+      };
+      // Store user data in localStorage
+      localStorage.setItem("user", JSON.stringify(newUser));
+      // Redirect to another page after successful registration
+      history.push("/admin"); // Replace '/dashboard' with the desired URL
+    } else if (
+      (storedUser.email === email && storedUser.password === password) ||
+      (defaultUser.email === email && defaultUser.password === password)
+    ) {
+      // Successful login, redirect to another page
+      history.push("/admin"); // Replace '/dashboard' with the desired URL
+    } else {
+      // Display an error message or handle unsuccessful login
+      alert("Invalid email or password"); // You can replace this with your error handling logic
+    }
+  };
   return (
     <>
       <div className="container mx-auto px-4 h-full">
@@ -9,40 +44,11 @@ export default function Login() {
           <div className="w-full lg:w-4/12 px-4">
             <div className="relative flex flex-col min-w-0 break-words w-full mb-6 shadow-lg rounded-lg bg-blueGray-200 border-0">
               <div className="rounded-t mb-0 px-6 py-6">
-                <div className="text-center mb-3">
-                  <h6 className="text-blueGray-500 text-sm font-bold">
-                    Sign in with
-                  </h6>
+                <div className="text-blueGray-400 text-center mb-3 font-bold">
                 </div>
-                <div className="btn-wrapper text-center">
-                  <button
-                    className="bg-white active:bg-blueGray-50 text-blueGray-700 font-normal px-4 py-2 rounded outline-none focus:outline-none mr-2 mb-1 uppercase shadow hover:shadow-md inline-flex items-center font-bold text-xs ease-linear transition-all duration-150"
-                    type="button"
-                  >
-                    <img
-                      alt="..."
-                      className="w-5 mr-1"
-                      src={require("assets/img/github.svg").default}
-                    />
-                    Github
-                  </button>
-                  <button
-                    className="bg-white active:bg-blueGray-50 text-blueGray-700 font-normal px-4 py-2 rounded outline-none focus:outline-none mr-1 mb-1 uppercase shadow hover:shadow-md inline-flex items-center font-bold text-xs ease-linear transition-all duration-150"
-                    type="button"
-                  >
-                    <img
-                      alt="..."
-                      className="w-5 mr-1"
-                      src={require("assets/img/google.svg").default}
-                    />
-                    Google
-                  </button>
-                </div>
-                <hr className="mt-6 border-b-1 border-blueGray-300" />
               </div>
               <div className="flex-auto px-4 lg:px-10 py-10 pt-0">
                 <div className="text-blueGray-400 text-center mb-3 font-bold">
-                  <small>Or sign in with credentials</small>
                 </div>
                 <form>
                   <div className="relative w-full mb-3">
@@ -54,6 +60,8 @@ export default function Login() {
                     </label>
                     <input
                       type="email"
+                      value={email}
+                      onChange={(e) => setEmail(e.target.value)}
                       className="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
                       placeholder="Email"
                     />
@@ -68,6 +76,8 @@ export default function Login() {
                     </label>
                     <input
                       type="password"
+                      value={password}
+                      onChange={(e) => setPassword(e.target.value)}
                       className="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
                       placeholder="Password"
                     />
@@ -89,6 +99,7 @@ export default function Login() {
                     <button
                       className="bg-blueGray-800 text-white active:bg-blueGray-600 text-sm font-bold uppercase px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 w-full ease-linear transition-all duration-150"
                       type="button"
+                      onClick={handleLogin}
                     >
                       Sign In
                     </button>

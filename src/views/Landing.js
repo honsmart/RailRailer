@@ -16,7 +16,7 @@ export default function Landing() {
             className="absolute top-0 w-full h-full bg-center bg-cover"
             style={{
               backgroundImage:
-                "url('https://images.unsplash.com/photo-1557804506-669a67965ba0?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1267&q=80')",
+                "url('https://media.premiumtimesng.com/wp-content/files/2023/01/WhatsApp-Image-2023-01-24-at-13.38.36-1.jpeg')",
             }}
           >
             <span
@@ -29,12 +29,9 @@ export default function Landing() {
               <div className="w-full lg:w-6/12 px-4 ml-auto mr-auto text-center">
                 <div className="pr-12">
                   <h1 className="text-white font-semibold text-5xl">
-                    Your story starts with us.
-                  </h1>
+                    Effortless Train Booking with RailRider                  </h1>
                   <p className="mt-4 text-lg text-blueGray-200">
-                    This is a simple example of a Landing Page you can build
-                    using Notus React. It features multiple CSS components based
-                    on the Tailwind CSS design system.
+                    Say goodbye to long queues and hello to effortless train bookings. Experience travel the way it should be – easy, efficient, and enjoyable with RailReserve.
                   </p>
                 </div>
               </div>
@@ -70,10 +67,9 @@ export default function Landing() {
                     <div className="text-white p-3 text-center inline-flex items-center justify-center w-12 h-12 mb-5 shadow-lg rounded-full bg-red-400">
                       <i className="fas fa-award"></i>
                     </div>
-                    <h6 className="text-xl font-semibold">Awarded Agency</h6>
+                    <h6 className="text-xl font-semibold">User-Friendly Interface</h6>
                     <p className="mt-2 mb-4 text-blueGray-500">
-                      Divide details about your product or agency work into
-                      parts. A paragraph describing a feature will be enough.
+                      An intuitive and easy-to-navigate platform for booking train tickets.
                     </p>
                   </div>
                 </div>
@@ -85,10 +81,9 @@ export default function Landing() {
                     <div className="text-white p-3 text-center inline-flex items-center justify-center w-12 h-12 mb-5 shadow-lg rounded-full bg-lightBlue-400">
                       <i className="fas fa-retweet"></i>
                     </div>
-                    <h6 className="text-xl font-semibold">Free Revisions</h6>
+                    <h6 className="text-xl font-semibold">Special Discounts</h6>
                     <p className="mt-2 mb-4 text-blueGray-500">
-                      Keep you user engaged by providing meaningful information.
-                      Remember that by this time, the user is curious.
+                      Access special discounts, promotions, and loyalty programs for frequent travelers.
                     </p>
                   </div>
                 </div>
@@ -100,10 +95,9 @@ export default function Landing() {
                     <div className="text-white p-3 text-center inline-flex items-center justify-center w-12 h-12 mb-5 shadow-lg rounded-full bg-emerald-400">
                       <i className="fas fa-fingerprint"></i>
                     </div>
-                    <h6 className="text-xl font-semibold">Verified Company</h6>
+                    <h6 className="text-xl font-semibold">Customer Support</h6>
                     <p className="mt-2 mb-4 text-blueGray-500">
-                      Write a few lines about each one. A paragraph describing a
-                      feature will be enough. Keep you user engaged!
+                      24/7 customer support to assist with inquiries, changes, or cancellations.
                     </p>
                   </div>
                 </div>
@@ -116,29 +110,19 @@ export default function Landing() {
                   <i className="fas fa-user-friends text-xl"></i>
                 </div>
                 <h3 className="text-3xl mb-2 font-semibold leading-normal">
-                  Working with us is a pleasure
+                  Explore the World by Rail
                 </h3>
                 <p className="text-lg font-light leading-relaxed mt-4 mb-4 text-blueGray-600">
-                  Don't let your uses guess by attaching tooltips and popoves to
-                  any element. Just make sure you enable them first via
-                  JavaScript.
+                  Embark on an unforgettable journey through picturesque landscapes, historic cities, and hidden gems. Discover the magic of train travel as you traverse the globe, one track at a time. Where will your next adventure take you?
                 </p>
-                <p className="text-lg font-light leading-relaxed mt-0 mb-4 text-blueGray-600">
-                  The kit comes with three pre-built pages to help you get
-                  started faster. You can change the text and images and you're
-                  good to go. Just make sure you enable them first via
-                  JavaScript.
-                </p>
-                <Link to="/" className="font-bold text-blueGray-700 mt-8">
-                  Check Notus React!
-                </Link>
+
               </div>
 
               <div className="w-full md:w-4/12 px-4 mr-auto ml-auto">
                 <div className="relative flex flex-col min-w-0 break-words bg-white w-full mb-6 shadow-lg rounded-lg bg-lightBlue-500">
                   <img
                     alt="..."
-                    src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1051&q=80"
+                    src="https://cdn.pmnewsnigeria.com/wp-content/uploads/2023/01/VZUSKa8h-Buhari-3.jpg"
                     className="w-full align-middle rounded-t-lg"
                   />
                   <blockquote className="relative p-8 mb-4">
@@ -154,12 +138,10 @@ export default function Landing() {
                       ></polygon>
                     </svg>
                     <h4 className="text-xl font-bold text-white">
-                      Top Notch Services
+                      Explore the World by Rail
                     </h4>
                     <p className="text-md font-light mt-2 text-white">
-                      The Arctic Ocean freezes every winter and much of the
-                      sea-ice then thaws every summer, and that process will
-                      continue whatever happens.
+                      Leave the travel planning to us! Our user-friendly platform offers easy booking, flexible schedules, and exceptional customer service. Whether it's a solo adventure or a family vacation, we've got your journey covered. Say goodbye to travel hassles and hello to unforgettable memories.
                     </p>
                   </blockquote>
                 </div>
@@ -195,7 +177,7 @@ export default function Landing() {
                 <img
                   alt="..."
                   className="max-w-full rounded-lg shadow-lg"
-                  src="https://images.unsplash.com/photo-1555212697-194d092e3b8f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80"
+                  src="https://guardian.ng/wp-content/uploads/2023/01/Blue-Line-1062x598.jpg"
                 />
               </div>
               <div className="w-full md:w-5/12 ml-auto mr-auto px-4">
@@ -203,11 +185,9 @@ export default function Landing() {
                   <div className="text-lightBlue-600 p-3 text-center inline-flex items-center justify-center w-16 h-16 mb-6 shadow-lg rounded-full bg-lightBlue-300">
                     <i className="fas fa-rocket text-xl"></i>
                   </div>
-                  <h3 className="text-3xl font-semibold">A growing company</h3>
+                  <h3 className="text-3xl font-semibold">About RailRider - Your Journey, Our Passion</h3>
                   <p className="mt-4 text-lg leading-relaxed text-blueGray-500">
-                    The extension comes with three pre-built pages to help you
-                    get started faster. You can change the text and images and
-                    you're good to go.
+                    At RailRider, we're not just in the business of booking train tickets; we're in the business of making dreams come true, one rail journey at a time. Our passion for trains and travel runs deep, and it's what sets us apart in the world of transportation.
                   </p>
                   <ul className="list-none mt-6">
                     <li className="py-2">
@@ -219,8 +199,7 @@ export default function Landing() {
                         </div>
                         <div>
                           <h4 className="text-blueGray-500">
-                            Carefully crafted components
-                          </h4>
+                            Expertise                          </h4>
                         </div>
                       </div>
                     </li>
@@ -233,8 +212,7 @@ export default function Landing() {
                         </div>
                         <div>
                           <h4 className="text-blueGray-500">
-                            Amazing page examples
-                          </h4>
+                            Easy Booking                          </h4>
                         </div>
                       </div>
                     </li>
@@ -247,8 +225,7 @@ export default function Landing() {
                         </div>
                         <div>
                           <h4 className="text-blueGray-500">
-                            Dynamic components
-                          </h4>
+                            Customer-Centric                          </h4>
                         </div>
                       </div>
                     </li>
@@ -259,162 +236,7 @@ export default function Landing() {
           </div>
         </section>
 
-        <section className="pt-20 pb-48">
-          <div className="container mx-auto px-4">
-            <div className="flex flex-wrap justify-center text-center mb-24">
-              <div className="w-full lg:w-6/12 px-4">
-                <h2 className="text-4xl font-semibold">Here are our heroes</h2>
-                <p className="text-lg leading-relaxed m-4 text-blueGray-500">
-                  According to the National Oceanic and Atmospheric
-                  Administration, Ted, Scambos, NSIDClead scentist, puts the
-                  potentially record maximum.
-                </p>
-              </div>
-            </div>
-            <div className="flex flex-wrap">
-              <div className="w-full md:w-6/12 lg:w-3/12 lg:mb-0 mb-12 px-4">
-                <div className="px-6">
-                  <img
-                    alt="..."
-                    src={require("assets/img/team-1-800x800.jpg").default}
-                    className="shadow-lg rounded-full mx-auto max-w-120-px"
-                  />
-                  <div className="pt-6 text-center">
-                    <h5 className="text-xl font-bold">Ryan Tompson</h5>
-                    <p className="mt-1 text-sm text-blueGray-400 uppercase font-semibold">
-                      Web Developer
-                    </p>
-                    <div className="mt-6">
-                      <button
-                        className="bg-lightBlue-400 text-white w-8 h-8 rounded-full outline-none focus:outline-none mr-1 mb-1"
-                        type="button"
-                      >
-                        <i className="fab fa-twitter"></i>
-                      </button>
-                      <button
-                        className="bg-lightBlue-600 text-white w-8 h-8 rounded-full outline-none focus:outline-none mr-1 mb-1"
-                        type="button"
-                      >
-                        <i className="fab fa-facebook-f"></i>
-                      </button>
-                      <button
-                        className="bg-pink-500 text-white w-8 h-8 rounded-full outline-none focus:outline-none mr-1 mb-1"
-                        type="button"
-                      >
-                        <i className="fab fa-dribbble"></i>
-                      </button>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div className="w-full md:w-6/12 lg:w-3/12 lg:mb-0 mb-12 px-4">
-                <div className="px-6">
-                  <img
-                    alt="..."
-                    src={require("assets/img/team-2-800x800.jpg").default}
-                    className="shadow-lg rounded-full mx-auto max-w-120-px"
-                  />
-                  <div className="pt-6 text-center">
-                    <h5 className="text-xl font-bold">Romina Hadid</h5>
-                    <p className="mt-1 text-sm text-blueGray-400 uppercase font-semibold">
-                      Marketing Specialist
-                    </p>
-                    <div className="mt-6">
-                      <button
-                        className="bg-red-600 text-white w-8 h-8 rounded-full outline-none focus:outline-none mr-1 mb-1"
-                        type="button"
-                      >
-                        <i className="fab fa-google"></i>
-                      </button>
-                      <button
-                        className="bg-lightBlue-600 text-white w-8 h-8 rounded-full outline-none focus:outline-none mr-1 mb-1"
-                        type="button"
-                      >
-                        <i className="fab fa-facebook-f"></i>
-                      </button>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div className="w-full md:w-6/12 lg:w-3/12 lg:mb-0 mb-12 px-4">
-                <div className="px-6">
-                  <img
-                    alt="..."
-                    src={require("assets/img/team-3-800x800.jpg").default}
-                    className="shadow-lg rounded-full mx-auto max-w-120-px"
-                  />
-                  <div className="pt-6 text-center">
-                    <h5 className="text-xl font-bold">Alexa Smith</h5>
-                    <p className="mt-1 text-sm text-blueGray-400 uppercase font-semibold">
-                      UI/UX Designer
-                    </p>
-                    <div className="mt-6">
-                      <button
-                        className="bg-red-600 text-white w-8 h-8 rounded-full outline-none focus:outline-none mr-1 mb-1"
-                        type="button"
-                      >
-                        <i className="fab fa-google"></i>
-                      </button>
-                      <button
-                        className="bg-lightBlue-400 text-white w-8 h-8 rounded-full outline-none focus:outline-none mr-1 mb-1"
-                        type="button"
-                      >
-                        <i className="fab fa-twitter"></i>
-                      </button>
-                      <button
-                        className="bg-blueGray-700 text-white w-8 h-8 rounded-full outline-none focus:outline-none mr-1 mb-1"
-                        type="button"
-                      >
-                        <i className="fab fa-instagram"></i>
-                      </button>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div className="w-full md:w-6/12 lg:w-3/12 lg:mb-0 mb-12 px-4">
-                <div className="px-6">
-                  <img
-                    alt="..."
-                    src={require("assets/img/team-4-470x470.png").default}
-                    className="shadow-lg rounded-full mx-auto max-w-120-px"
-                  />
-                  <div className="pt-6 text-center">
-                    <h5 className="text-xl font-bold">Jenna Kardi</h5>
-                    <p className="mt-1 text-sm text-blueGray-400 uppercase font-semibold">
-                      Founder and CEO
-                    </p>
-                    <div className="mt-6">
-                      <button
-                        className="bg-pink-500 text-white w-8 h-8 rounded-full outline-none focus:outline-none mr-1 mb-1"
-                        type="button"
-                      >
-                        <i className="fab fa-dribbble"></i>
-                      </button>
-                      <button
-                        className="bg-red-600 text-white w-8 h-8 rounded-full outline-none focus:outline-none mr-1 mb-1"
-                        type="button"
-                      >
-                        <i className="fab fa-google"></i>
-                      </button>
-                      <button
-                        className="bg-lightBlue-400 text-white w-8 h-8 rounded-full outline-none focus:outline-none mr-1 mb-1"
-                        type="button"
-                      >
-                        <i className="fab fa-twitter"></i>
-                      </button>
-                      <button
-                        className="bg-blueGray-700 text-white w-8 h-8 rounded-full outline-none focus:outline-none mr-1 mb-1"
-                        type="button"
-                      >
-                        <i className="fab fa-instagram"></i>
-                      </button>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
+
 
         <section className="pb-20 relative block bg-blueGray-800">
           <div
@@ -441,53 +263,13 @@ export default function Landing() {
             <div className="flex flex-wrap text-center justify-center">
               <div className="w-full lg:w-6/12 px-4">
                 <h2 className="text-4xl font-semibold text-white">
-                  Build something
-                </h2>
+                  Contact Us                </h2>
                 <p className="text-lg leading-relaxed mt-4 mb-4 text-blueGray-400">
-                  Put the potentially record low maximum sea ice extent tihs
-                  year down to low ice. According to the National Oceanic and
-                  Atmospheric Administration, Ted, Scambos.
+                  Have a question or need assistance? We're here to help! At RailRider, we're dedicated to providing you with top-notch customer support. Feel free to reach out to us through any of the following channels:
                 </p>
               </div>
             </div>
-            <div className="flex flex-wrap mt-12 justify-center">
-              <div className="w-full lg:w-3/12 px-4 text-center">
-                <div className="text-blueGray-800 p-3 w-12 h-12 shadow-lg rounded-full bg-white inline-flex items-center justify-center">
-                  <i className="fas fa-medal text-xl"></i>
-                </div>
-                <h6 className="text-xl mt-5 font-semibold text-white">
-                  Excelent Services
-                </h6>
-                <p className="mt-2 mb-4 text-blueGray-400">
-                  Some quick example text to build on the card title and make up
-                  the bulk of the card's content.
-                </p>
-              </div>
-              <div className="w-full lg:w-3/12 px-4 text-center">
-                <div className="text-blueGray-800 p-3 w-12 h-12 shadow-lg rounded-full bg-white inline-flex items-center justify-center">
-                  <i className="fas fa-poll text-xl"></i>
-                </div>
-                <h5 className="text-xl mt-5 font-semibold text-white">
-                  Grow your market
-                </h5>
-                <p className="mt-2 mb-4 text-blueGray-400">
-                  Some quick example text to build on the card title and make up
-                  the bulk of the card's content.
-                </p>
-              </div>
-              <div className="w-full lg:w-3/12 px-4 text-center">
-                <div className="text-blueGray-800 p-3 w-12 h-12 shadow-lg rounded-full bg-white inline-flex items-center justify-center">
-                  <i className="fas fa-lightbulb text-xl"></i>
-                </div>
-                <h5 className="text-xl mt-5 font-semibold text-white">
-                  Launch time
-                </h5>
-                <p className="mt-2 mb-4 text-blueGray-400">
-                  Some quick example text to build on the card title and make up
-                  the bulk of the card's content.
-                </p>
-              </div>
-            </div>
+
           </div>
         </section>
         <section className="relative block py-24 lg:pt-0 bg-blueGray-800">
@@ -497,8 +279,7 @@ export default function Landing() {
                 <div className="relative flex flex-col min-w-0 break-words w-full mb-6 shadow-lg rounded-lg bg-blueGray-200">
                   <div className="flex-auto p-5 lg:p-10">
                     <h4 className="text-2xl font-semibold">
-                      Want to work with us?
-                    </h4>
+                      Contact Us                    </h4>
                     <p className="leading-relaxed mt-1 mb-4 text-blueGray-500">
                       Complete this form and we will get back to you in 24
                       hours.

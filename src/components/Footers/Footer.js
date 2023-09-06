@@ -43,18 +43,8 @@ export default function Footer() {
                 >
                   <i className="fab fa-facebook-square"></i>
                 </button>
-                <button
-                  className="bg-white text-pink-400 shadow-lg font-normal h-10 w-10 items-center justify-center align-center rounded-full outline-none focus:outline-none mr-2"
-                  type="button"
-                >
-                  <i className="fab fa-dribbble"></i>
-                </button>
-                <button
-                  className="bg-white text-blueGray-800 shadow-lg font-normal h-10 w-10 items-center justify-center align-center rounded-full outline-none focus:outline-none mr-2"
-                  type="button"
-                >
-                  <i className="fab fa-github"></i>
-                </button>
+
+
               </div>
             </div>
             <div className="w-full lg:w-6/12 px-4">
@@ -67,7 +57,7 @@ export default function Footer() {
                     <li>
                       <a
                         className="text-blueGray-600 hover:text-blueGray-800 font-semibold block pb-2 text-sm"
-                        href="https://www.creative-tim.com/presentation?ref=nr-footer"
+                        href="?ref=nr-footer"
                       >
                         About Us
                       </a>
@@ -80,22 +70,7 @@ export default function Footer() {
                         Blog
                       </a>
                     </li>
-                    <li>
-                      <a
-                        className="text-blueGray-600 hover:text-blueGray-800 font-semibold block pb-2 text-sm"
-                        href="https://www.github.com/creativetimofficial?ref=nr-footer"
-                      >
-                        Github
-                      </a>
-                    </li>
-                    <li>
-                      <a
-                        className="text-blueGray-600 hover:text-blueGray-800 font-semibold block pb-2 text-sm"
-                        href="https://www.creative-tim.com/bootstrap-themes/free?ref=nr-footer"
-                      >
-                        Free Products
-                      </a>
-                    </li>
+
                   </ul>
                 </div>
                 <div className="w-full lg:w-4/12 px-4">
@@ -103,18 +78,11 @@ export default function Footer() {
                     Other Resources
                   </span>
                   <ul className="list-unstyled">
+
                     <li>
                       <a
                         className="text-blueGray-600 hover:text-blueGray-800 font-semibold block pb-2 text-sm"
-                        href="https://github.com/creativetimofficial/notus-react/blob/main/LICENSE.md?ref=nr-footer"
-                      >
-                        MIT License
-                      </a>
-                    </li>
-                    <li>
-                      <a
-                        className="text-blueGray-600 hover:text-blueGray-800 font-semibold block pb-2 text-sm"
-                        href="https://creative-tim.com/terms?ref=nr-footer"
+                        href="?ref=nr-footer"
                       >
                         Terms & Conditions
                       </a>
@@ -122,7 +90,7 @@ export default function Footer() {
                     <li>
                       <a
                         className="text-blueGray-600 hover:text-blueGray-800 font-semibold block pb-2 text-sm"
-                        href="https://creative-tim.com/privacy?ref=nr-footer"
+                        href="?ref=nr-footer"
                       >
                         Privacy Policy
                       </a>
@@ -130,7 +98,7 @@ export default function Footer() {
                     <li>
                       <a
                         className="text-blueGray-600 hover:text-blueGray-800 font-semibold block pb-2 text-sm"
-                        href="https://creative-tim.com/contact-us?ref=nr-footer"
+                        href="?ref=nr-footer"
                       >
                         Contact Us
                       </a>
@@ -149,7 +117,7 @@ export default function Footer() {
                   href="https://www.creative-tim.com?ref=nr-footer"
                   className="text-blueGray-500 hover:text-blueGray-800"
                 >
-                  Creative Tim
+                  RailRider
                 </a>
                 .
               </div>
