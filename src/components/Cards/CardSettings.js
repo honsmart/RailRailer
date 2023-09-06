@@ -154,9 +154,7 @@ export default function CardSettings() {
       </div>
 
       {/* Render the PayButton component */}
-      {totalAmount > 0 && (
-        <PayButton amount={totalAmount} email="adegboyeopeyemi@gmail.com" />
-      )}
+
     </>
   );
 }
