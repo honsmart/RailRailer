@@ -1,7 +1,5 @@
 import React, { useState } from "react";
-import PayButton
-  from "views/admin/PayButton";
-// Define an array of popular states in Nigeria
+
 const popularStatesInNigeria = [
   "Lagos",
   "Abuja",
