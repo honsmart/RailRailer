@@ -1,6 +1,5 @@
 import React, { useState } from "react";
-import { Link, useHistory } from "react-router-dom";
-
+import { useHistory } from "react-router-dom";
 
 export default function Register() {
   const [username, setUsername] = useState('');
@@ -9,6 +8,10 @@ export default function Register() {
   const history = useHistory(); // Initialize useHistory
 
   const handleRegister = () => {
+    if (!email || !password || username) {
+      alert("Invalid email , username or password");
+      return;
+    }
     // Create a user object
     const user = {
       username,
@@ -45,7 +48,7 @@ export default function Register() {
                   <div className="relative w-full mb-3">
                     <label
                       className="block uppercase text-blueGray-600 text-xs font-bold mb-2"
-                      htmlFor="grid-password"
+                      htmlFor="grid-username"
                     >
                       Name
                     </label>
@@ -55,13 +58,15 @@ export default function Register() {
                       placeholder="Name"
                       value={username}
                       onChange={(e) => setUsername(e.target.value)}
+                      id="grid-username"
+                      required // Added required attribute
                     />
                   </div>
 
                   <div className="relative w-full mb-3">
                     <label
                       className="block uppercase text-blueGray-600 text-xs font-bold mb-2"
-                      htmlFor="grid-password"
+                      htmlFor="grid-email"
                     >
                       Email
                     </label>
@@ -71,6 +76,8 @@ export default function Register() {
                       placeholder="Email"
                       value={email}
                       onChange={(e) => setEmail(e.target.value)}
+                      id="grid-email"
+                      required // Added required attribute
                     />
                   </div>
 
@@ -87,6 +94,8 @@ export default function Register() {
                       placeholder="Password"
                       value={password}
                       onChange={(e) => setPassword(e.target.value)}
+                      id="grid-password"
+                      required // Added required attribute
                     />
                   </div>
 
@@ -116,9 +125,7 @@ export default function Register() {
                       type="button"
                       onClick={handleRegister}
                     >
-                      <Link to="/admin">
-                        Create Account
-                      </Link>
+                      Create Account
                     </button>
                   </div>
                 </form>

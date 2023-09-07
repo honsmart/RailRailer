@@ -6,6 +6,7 @@ export default function Login() {
   const [password, setPassword] = useState("");
   const history = useHistory();
 
+
   // Define a default user
   const defaultUser = {
     email: "hikmah@gmail.com",
@@ -13,6 +14,11 @@ export default function Login() {
   };
 
   const handleLogin = () => {
+
+    if (!email || !password) {
+      alert("Invalid email or password");
+      return;
+    }
     // Retrieve user data from localStorage
     const storedUser = JSON.parse(localStorage.getItem("user"));
 
@@ -37,6 +43,7 @@ export default function Login() {
       alert("Invalid email or password"); // You can replace this with your error handling logic
     }
   };
+
   return (
     <>
       <div className="container mx-auto px-4 h-full">
@@ -54,7 +61,7 @@ export default function Login() {
                   <div className="relative w-full mb-3">
                     <label
                       className="block uppercase text-blueGray-600 text-xs font-bold mb-2"
-                      htmlFor="grid-password"
+                      htmlFor="grid-email"
                     >
                       Email
                     </label>
@@ -64,6 +71,8 @@ export default function Login() {
                       onChange={(e) => setEmail(e.target.value)}
                       className="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
                       placeholder="Email"
+                      id="grid-email"
+                      required // Added required attribute
                     />
                   </div>
 
@@ -80,6 +89,8 @@ export default function Login() {
                       onChange={(e) => setPassword(e.target.value)}
                       className="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
                       placeholder="Password"
+                      id="grid-password"
+                      required // Added required attribute
                     />
                   </div>
                   <div>

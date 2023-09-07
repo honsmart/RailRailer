@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import { useHistory } from "react-router-dom";
+
 
 const popularStatesInNigeria = [
   "Lagos",
@@ -14,6 +16,8 @@ export default function CardSettings() {
   const [to, setTo] = useState("");
   const [date, setDate] = useState("");
   const [passengers, setPassengers] = useState("");
+  const history = useHistory(); // Initialize useHistory
+
 
 
 
@@ -40,6 +44,8 @@ export default function CardSettings() {
     setTo("");
     setDate("");
     setPassengers("");
+    history.push("/admin/dashboard"); // Replace '/dashboard' with the desired URL
+
   };
 
   return (
