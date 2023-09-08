@@ -72,10 +72,6 @@ export default function CardTable({ color }) {
             <td>${booking.ticketId}</td>
           </tr>
           <tr>
-            <td>Name</td>
-            <td>${booking.name}</td>
-          </tr>
-          <tr>
             <td>Date</td>
             <td>${booking.date}</td>
           </tr>

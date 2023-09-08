@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import { useHistory } from "react-router-dom";
 
 
-
 const popularStatesInNigeria = [
   "Lagos",
   "Abuja",
@@ -11,8 +10,6 @@ const popularStatesInNigeria = [
   "Port Harcourt",
   // Add more states as needed
 ];
-
-
 
 export default function CardSettings() {
   const [from, setFrom] = useState("");
@@ -35,7 +32,7 @@ export default function CardSettings() {
     return (maxTicketId + 1).toString();
   };
 
-  const handleBooking = (reference) => {
+  const handleBooking = () => {
     const ticketId = getNextTicketId();
 
     const booking = {
@@ -45,7 +42,6 @@ export default function CardSettings() {
       date,
       passengers,
       status: "Booked",
-      reference: reference
     };
 
     // Retrieve existing bookings from localStorage
@@ -64,8 +60,6 @@ export default function CardSettings() {
     setPassengers("");
     history.push("/admin/dashboard"); // Replace '/dashboard' with the desired URL
   };
-
-
   return (
     <>
       <div className="relative flex flex-col min-w-0 break-words w-full mb-6 shadow-lg rounded-lg bg-blueGray-100 border-0">
@@ -171,7 +165,6 @@ export default function CardSettings() {
                 Book Train
               </button>
             </div>
-
           </form>
         </div>
       </div>
