@@ -8,7 +8,7 @@ export default function Register() {
   const history = useHistory(); // Initialize useHistory
 
   const handleRegister = () => {
-    if (!email || !password || username) {
+    if (!email || !password || !username) {
       alert("Invalid email , username or password");
       return;
     }

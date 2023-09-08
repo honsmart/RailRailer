@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import { useHistory } from "react-router-dom";
+import { PaystackConsumer } from 'react-paystack';
+
 
 
 const popularStatesInNigeria = [
@@ -11,6 +13,9 @@ const popularStatesInNigeria = [
   // Add more states as needed
 ];
 
+
+
+
 export default function CardSettings() {
   const [from, setFrom] = useState("");
   const [to, setTo] = useState("");
@@ -18,16 +23,59 @@ export default function CardSettings() {
   const [passengers, setPassengers] = useState("");
   const history = useHistory(); // Initialize useHistory
 
+  const getNextTicketId = () => {
+    // Retrieve existing bookings from localStorage
+    const existingBookings = JSON.parse(localStorage.getItem("bookings")) || [];
+
+    // Find the highest ticket ID in existing bookings
+    const maxTicketId = existingBookings.reduce((maxId, booking) => {
+      const ticketId = parseInt(booking.ticketId, 10);
+      return ticketId > maxId ? ticketId : maxId;
+    }, 0);
+
+    // Increment the highest ticket ID by 1 to get the next ticket ID
+    return (maxTicketId + 1).toString();
+  };
+
+  const config = {
+    reference: "ddd",
+    email: "adegboyeopeyemi580@gmail.com",
+    amount: 20000, //Amount is in the country's lowest currency. E.g Kobo, so 20000 kobo = N200
+    publicKey: 'pk_test_4b88b26288b9e90a9487236bc1c2493e33e98cff',
+  };
+
+  // you can call this function anything
+  const handleSuccess = (reference) => {
+    // Implementation for whatever you want to do with reference and after success call.
+    handleBooking(reference);
+  };
+
+  // you can call this function anything
+  const handleClose = () => {
+    // implementation for  whatever you want to do when the Paystack dialog closed.
+    // console.log('closed')
+  }
+
+  const componentProps = {
+    ...config,
+    text: 'Paystack Button Implementation',
+    onSuccess: (reference) => handleSuccess(reference),
+    onClose: handleClose
+  };
 
 
 
-  const handleBooking = () => {
+  const handleBooking = (reference) => {
+    const ticketId = getNextTicketId();
+
     const booking = {
+      ticketId, // Assign the next ticket ID
       from,
       to,
       date,
       passengers,
       status: "Booked",
+      reference: reference
     };
 
     // Retrieve existing bookings from localStorage
@@ -45,8 +93,9 @@ export default function CardSettings() {
     setDate("");
     setPassengers("");
     history.push("/admin/dashboard"); // Replace '/dashboard' with the desired URL
-
   };
+
+
 
   return (
     <>
@@ -144,15 +193,10 @@ export default function CardSettings() {
               </div>
             </div>
 
-            <div className="text-center mt-6">
-              <button
-                className="bg-blueGray-800 text-white active:bg-blueGray-600 text-sm font-bold uppercase px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 w-full ease-linear transition-all duration-150"
-                type="button"
-                onClick={handleBooking}
-              >
-                Book Train
-              </button>
-            </div>
+
+            <PaystackConsumer {...componentProps} >
+              {({ initializePayment }) => <button onClick={() => initializePayment(handleSuccess, handleClose)}>Paystack Consumer Implementation</button>}
+            </PaystackConsumer>
           </form>
         </div>
       </div>

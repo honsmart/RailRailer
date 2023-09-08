@@ -1,10 +1,10 @@
 import React from "react";
 import PropTypes from "prop-types";
-
-// components
+import { useHistory } from "react-router-dom";
 
 export default function CardTable({ color }) {
   const existingBookings = JSON.parse(localStorage.getItem("bookings")) || [];
+  const history = useHistory(); // Initialize useHistory
 
   const handleCancelBooking = (index) => {
     // Get the existing bookings from local storage
@@ -19,9 +19,88 @@ export default function CardTable({ color }) {
     }
 
     // Refresh the page or update the state to re-render the table
-    window.location.reload(); // You can use a state management library to avoid page reload
+    history.push("/admin/dashboard"); // Replace '/dashboard' with the desired URL
   };
 
+  const handleRebook = (index) => {
+    // Get the existing bookings from local storage
+    const existingBookings = JSON.parse(localStorage.getItem("bookings")) || [];
+
+    // Update the status of the booking at the specified index to "Canceled"
+    if (existingBookings[index]) {
+      existingBookings[index].status = "Booked";
+
+      // Update localStorage with the updated bookings
+      localStorage.setItem("bookings", JSON.stringify(existingBookings));
+    }
+
+    // Refresh the page or update the state to re-render the table
+    history.push("/admin/dashboard"); // Replace '/dashboard' with the desired URL
+  };
+
+
+  const handlePrintReceipt = (booking) => {
+    const receiptStyles = `
+      <style>
+        /* Add CSS styles for the receipt here */
+        table {
+          border-collapse: collapse;
+          width: 100%;
+        }
+        th, td {
+          border: 1px solid #ddd;
+          padding: 8px;
+          text-align: left;
+        }
+        th {
+          background-color: ${color === "light" ? "#f2f2f2" : "#333"};
+          color: ${color === "light" ? "#333" : "#fff"};
+        }
+      </style>
+    `;
+
+    const receiptContent = `
+      <div>
+        <h2>Receipt</h2>
+        <table>
+          <tr>
+            <th>Property</th>
+            <th>Value</th>
+          </tr>
+          <tr>
+            <td>Ticket ID</td>
+            <td>${booking.ticketId}</td>
+          </tr>
+          <tr>
+            <td>Name</td>
+            <td>${booking.name}</td>
+          </tr>
+          <tr>
+            <td>Date</td>
+            <td>${booking.date}</td>
+          </tr>
+          <tr>
+            <td>Status</td>
+            <td>${booking.status}</td>
+          </tr>
+          <!-- Add more details here as needed -->
+        </table>
+      </div>
+    `;
+
+    const popupWin = window.open("", "_blank", "width=600,height=600");
+    popupWin.document.open();
+    popupWin.document.write(`
+      <html>
+        <head>
+          <title>Receipt</title>
+          ${receiptStyles}
+        </head>
+        <body onload="window.print();">${receiptContent}</body>
+      </html>
+    `);
+    popupWin.document.close();
+  };
 
   return (
     <>
@@ -46,7 +125,6 @@ export default function CardTable({ color }) {
           </div>
         </div>
         <div className="block w-full overflow-x-auto">
-          {/* Bookings table */}
           <table className="items-center w-full bg-transparent border-collapse">
             <thead>
               <tr>
@@ -131,13 +209,38 @@ export default function CardTable({ color }) {
                     {booking.status}
                   </td>
                   <td className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-right">
-                    <button
-                      className="bg-red-500 text-white active:bg-red-600 font-bold uppercase text-xs px-4 py-2 rounded-full outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
-                      type="button"
-                      onClick={() => handleCancelBooking(index)}
-                    >
-                      Cancel
-                    </button>
+                    {booking.status === "Canceled" ? (
+                      <button
+                        className="bg-black text-white active:bg-gray-700 font-bold uppercase text-xs px-4 py-2 rounded-full outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
+                        type="button"
+                        onClick={() => handleRebook(index)}
+                      >
+                        Rebook
+                      </button>
+                    ) : (
+                      <div></div>
+                    )}
+                    {booking.status === "Booked" ? (
+                      <div>
+                        <button
+                          className="bg-black text-white active:bg-gray-700 font-bold uppercase text-xs px-4 py-2 rounded-full outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
+                          type="button"
+                          onClick={() => handleCancelBooking(index)}
+                        >
+                          Cancel
+                        </button>
+                        <button
+                          className="bg-black text-white active:bg-gray-700 font-bold uppercase text-xs px-4 py-2 rounded-full outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
+                          type="button"
+                          onClick={() => handlePrintReceipt(booking)}
+                        >
+                          Print Receipt
+                        </button>
+                      </div>
+                    ) : (
+                      <div></div>
+
+                    )}
                   </td>
                 </tr>
               ))}
