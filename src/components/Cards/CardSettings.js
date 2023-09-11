@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import { useHistory } from "react-router-dom";
+import { useFlutterwave, closePaymentModal } from "flutterwave-react-v3";
+
 
 
 const popularStatesInNigeria = [
@@ -60,7 +62,29 @@ export default function CardSettings() {
     setPassengers("");
     history.push("/admin/dashboard"); // Replace '/dashboard' with the desired URL
   };
+
+
+
+  const config = {
+    public_key: "FLWPUBK_TEST-6f5c9ef754ca381a9506b957146de933-X",
+    tx_ref: Date.now(),
+    amount: passengers * 1000,
+    currency: "NGN",
+    payment_options: "card,mobilemoney,ussd",
+    customer: {
+      email: "test@gmail.com",
+      name: "",
+    },
+    customizations: {
+      title: "RAILRIDER",
+      description: "Pay for your rail ride",
+      logo: "https://st2.depositphotos.com/4403291/7418/v/450/depositphotos_74189661-stock-illustration-online-shop-log.jpg",
+    },
+  };
+
+  const handleFlutterPayment = useFlutterwave(config);
   return (
+
     <>
       <div className="relative flex flex-col min-w-0 break-words w-full mb-6 shadow-lg rounded-lg bg-blueGray-100 border-0">
         <div className="rounded-t bg-white mb-0 px-6 py-6">
@@ -160,14 +184,24 @@ export default function CardSettings() {
               <button
                 className="bg-blueGray-800 text-white active:bg-blueGray-600 text-sm font-bold uppercase px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 w-full ease-linear transition-all duration-150"
                 type="button"
-                onClick={handleBooking}
-              >
+                onClick={() =>
+                  handleFlutterPayment({
+                    callback: (response) => {
+                      console.log(response);
+                      handleBooking();
+                      closePaymentModal();
+                    },
+                    onClose: () => { },
+                  })
+                }              >
                 Book Train
               </button>
             </div>
+
           </form>
         </div>
       </div>
+
 
       {/* Render the PayButton component */}
 

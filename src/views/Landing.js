@@ -4,6 +4,8 @@ import React from "react";
 
 import Navbar from "components/Navbars/AuthNavbar.js";
 import Footer from "components/Footers/Footer.js";
+import CardBooking from "components/Cards/CardBooking";
+
 
 export default function Landing() {
   return (
@@ -23,19 +25,26 @@ export default function Landing() {
               className="w-full h-full absolute opacity-75 bg-black"
             ></span>
           </div>
-          <div className="container relative mx-auto">
-            <div className="items-center flex flex-wrap">
-              <div className="w-full lg:w-6/12 px-4 ml-auto mr-auto text-center">
-                <div className="pr-12">
-                  <h1 className="text-white font-semibold text-5xl">
-                    Effortless Train Booking with RailRider                  </h1>
-                  <p className="mt-4 text-lg text-blueGray-200">
-                    Say goodbye to long queues and hello to effortless train bookings. Experience travel the way it should be – easy, efficient, and enjoyable with RailReserve.
-                  </p>
+          <div className="flex-col">
+            <div className="container relative mx-auto  mb-9">
+              <div className="items-center flex flex-wrap">
+                <div className="w-full lg:w-6/12 px-4 ml-auto mr-auto text-center">
+                  <div className="pr-12">
+                    <h1 className="text-white font-semibold text-5xl">
+                      Effortless Train Booking with RailRider                  </h1>
+                    <p className="mt-4 text-lg text-blueGray-200">
+                      Say goodbye to long queues and hello to effortless train bookings. Experience travel the way it should be – easy, efficient, and enjoyable with RailReserve.
+                    </p>
+
+
+                  </div>
                 </div>
               </div>
             </div>
+            <CardBooking />
+
           </div>
+
           <div
             className="top-auto bottom-0 left-0 right-0 w-full absolute pointer-events-none overflow-hidden h-70-px"
             style={{ transform: "translateZ(0)" }}
