@@ -19,8 +19,18 @@ export default function Register() {
       password,
     };
 
+    // Retrieve existing bookings from localStorage
+    const existingUsers = JSON.parse(localStorage.getItem("users")) || [];
+
+    // Add the new booking to the existing bookings
+    existingUsers.push(user);
+
+    localStorage.setItem("users", JSON.stringify(existingUsers));
+
+
     // Store user data in localStorage
     localStorage.setItem('user', JSON.stringify(user));
+
 
     // Clear form fields
     setUsername('');

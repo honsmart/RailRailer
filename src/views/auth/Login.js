@@ -9,11 +9,21 @@ export default function Login() {
 
   // Define a default user
   const defaultUser = {
+    "status": "active",
+    "username": "hikmah",
     email: "hikmah@gmail.com",
     password: "hikmah",
   };
 
   const handleLogin = () => {
+
+    // Retrieve existing bookings from localStorage
+    const existingUsers = JSON.parse(localStorage.getItem("users")) || [];
+
+    // Add the new booking to the existing bookings
+    existingUsers.push(defaultUser);
+
+    localStorage.setItem("users", JSON.stringify(existingUsers));
 
     if (!email || !password) {
       alert("Invalid email or password");
