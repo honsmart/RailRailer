@@ -57,6 +57,14 @@ export default function Footer() {
                     <li>
                       <a
                         className="text-blueGray-600 hover:text-blueGray-800 font-semibold block pb-2 text-sm"
+                        href="/auth/superadmin/login"
+                      >
+                        Admin Login
+                      </a>
+                    </li>
+                    <li>
+                      <a
+                        className="text-blueGray-600 hover:text-blueGray-800 font-semibold block pb-2 text-sm"
                         href="?ref=nr-footer"
                       >
                         About Us
